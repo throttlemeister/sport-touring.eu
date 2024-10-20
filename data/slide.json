@@ -1,11 +1,18 @@
 [
   {
-    "title": "Tella, A Hugo theme for Companies.",
-    "image": "img/slide/slide01.jpg"
+    "title": "crashdot.com",
+    "image": "img/slide/dolomites.jpg"
   },
   {
-    "title": "Sample text here...",
-    "image": "img/slide/slide02.jpg",
-    "color": "text-black"
+    "title": "Linux..",
+    "image": "img/slide/romania.jpg"
+  },
+  {
+    "title": "..Photography..",
+    "image": "img/slide/garda.jpg"
+  },
+  {
+    "title": "..tech",
+    "image": "img/slide/lake.jpg"
   }
 ]
