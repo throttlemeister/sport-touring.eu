@@ -1,4 +1,5 @@
-baseURL = "https://www.sport-touring.eu"
+#baseURL = "https://www.sport-touring.eu"
+baseURL = "https://throttlemeister.github.io/sport-touring.eu"
 title = "sport-touring.eu"
 author = "throttlemeister"
 languageCode = "en"
