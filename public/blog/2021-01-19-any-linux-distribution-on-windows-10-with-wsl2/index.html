@@ -3,7 +3,7 @@
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="utf-8">
-<title>sport-touring.eu | New site</title>
+<title>sport-touring.eu | Any Linux distribution on Windows 10 with WSL2</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
 <link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
@@ -20,26 +20,26 @@
 <link href='/css/style.min.css' rel="stylesheet" type="text/css">
 <link rel="stylesheet" href='/css/custom.css'>
 
-<meta property="og:title" content="sport-touring.eu | New site" />
+<meta property="og:title" content="sport-touring.eu | Any Linux distribution on Windows 10 with WSL2" />
 
 
 
 
-<meta name="description" content="After building and setting up my new computer and subsequent">
+<meta name="description" content="Introduction – WSL 2 on Windows 10 introduced the ability to">
 <meta property="og:title" content=" | " />
 <meta property="og:site_name" content="sport-touring.eu">
-<meta property="og:description" content="After building and setting up my new computer and subsequent">
-<meta property="og:url" content="http://localhost:1313/blog/new-site/">
+<meta property="og:description" content="Introduction – WSL 2 on Windows 10 introduced the ability to">
+<meta property="og:url" content="http://localhost:1313/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@tech_chiba">
 
-<link rel="canonical" href="http://localhost:1313/blog/new-site/">
+<link rel="canonical" href="http://localhost:1313/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/">
 
-<meta name="twitter:description" content="After building and setting up my new computer and subsequent">
-<meta property="article:published_time" content="2021-01-20T10:14:30&#43;00:00">
-<meta property="article:updated_time" content="2021-01-20T10:14:30&#43;00:00">
+<meta name="twitter:description" content="Introduction – WSL 2 on Windows 10 introduced the ability to">
+<meta property="article:published_time" content="2021-01-19T15:57:01&#43;00:00">
+<meta property="article:updated_time" content="2021-01-19T15:57:01&#43;00:00">
 
 
 
@@ -48,7 +48,7 @@
 <meta property="og:image" content="http://localhost:1313/">
 
 
-<meta name="twitter:title" content="New site">
+<meta name="twitter:title" content="Any Linux distribution on Windows 10 with WSL2">
 <link rel="preload" href='/css/sweetalert2.min.css' as="style"
     onload="this.onload=null;this.rel='stylesheet'">
 
@@ -88,7 +88,7 @@
     <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
         <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
             <a href="http://localhost:1313/"><img alt=""
-                    class=" mr-3" src="/"></a>
+                    class="h-14 mr-3" src="/"></a>
         </div>
         <div class="block lg:hidden">
             <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
@@ -130,52 +130,86 @@
     </div>
 <div class="mx-auto my-10 max-w-6xl">
     <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-        <h1 class="title text-5xl font-bold mb-3">New site</h1>
+        <h1 class="title text-5xl font-bold mb-3">Any Linux distribution on Windows 10 with WSL2</h1>
         <section class="mb-4 text-lg">
             <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
-                2021/01/20 </h4>
+                2021/01/19 </h4>
             
             <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>throttlemeister
             </h4>
             
             
+            <div id="categories" class="flex flex-row items-center">
+                <span class="icon-folder text-2xl mr-1"></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/computer'>computer</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/wsl'>WSL</a></span>
+                
+            </div>
+            
         </section>
         
-        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p>After building and setting up my new computer and subsequent move away from the Apple Mac ecosystem, I was left with an issue that the site I had built was setup using a Mac-only tool and could not be migrated to Windows. After mucking around with different tools on Windows and hacking things together, I have now decided to go platform independent and recreate my website using the ever popular WordPress CMS.</p>
-<p>Setting it up on the Synology was a breeze and after finding a suitable theme for my needs I have now started to get things up and running again, adding the content, etc. So far, it looks pretty ok and this may indeed be the way to go.</p>
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p><strong>Introduction </strong>– WSL 2 on Windows 10 introduced the ability to run a native linux kernel on your computer while using Windows 10 as your main operating system. Instead of emulating a Linux kernel, like WSL 1 does, WSL 2 uses a lightweight hypervisor to run linux in parallel with Windows.<br>
+To be able to run WSL 2 on Windows 10, installation of Windows 10 feature update 2004 is required.</p>
+<p>An explanation on how to enable WSL2 support can be found on the page detailing how to create a Gentoo instance on WSL2.</p>
+<p><strong>Any Linux distribution on Windows?</strong> – Yes, you can run any distribution of Linux on WSL quickly and easily, provided that:    <br>
+   1) <a href="https://www.sport-touring.eu/linuxwsl.html#content10-1r">a Docker image for that distribution is available.</a><br>
+   2) <a href="https://www.sport-touring.eu/linuxwsl.html#content10-2h">you install your distribution as normal in a virtual machine first</a></p>
+<p><strong>For the Docker method</strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><strong>How does it work</strong> – The first line, the docker pull, downloads the docker image to your computer. This can be any image, as long as it is Linux based, but since you are trying to get a specific Linux distribution for use in WSL, the assumption is it is an image for a Linux distro.</p>
+<p>The second line, the docker create, creates the docker container. It doesn’t start it, it just creates it so you don’t have to worry about containers all of a sudden taking up resources/</p>
+<p>The third line, the docker export, dumps the container into a tar archive. This is the file we need for WSL and contains the entire Linux distribution. At this point, you can throw away your docker container if you want as we do not need it anymore.</p>
+<p>Lastly, we are importing the tar archive we created from the docker container into WSL. We can now boot our newly created Linux distro of our choice in WSL and use it, modify it and work it like we want to.</p>
+<p><em><strong>NOTE</strong>: This process works in reverse as well! If you want to create and use a docker image from any WSL2 instance you have created you can simply export the WSL distro to a tar archive and import that into Docker and fire it up!</em></p>
+<p><strong>For the virtual machine method</strong><br>
+After you have installed the virtual machine, log into the virtual machine and issue the following commands.</p>
+<p><em><strong>Note:</strong> this also works for physical Linux machine or dual boot system where you want to copy the Linux system to WSL!</em></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This will create a tar archive of the entire system. This can get quite big, especially if you are doing this from a previously installed system and not a clean, base install so make sure you have enough space to save it.</p>
+<p>When the tar file has been created, copy it to your Windows machine somehow and issue the following command:</p>
+<!-- raw HTML omitted -->
+<p>This will create the WSL instance by side-loading it and you can start it by issueing wsl.exe -d &lt;Your_Distro_Name&gt; or by opening Windows Terminal; it should already be listed in the dropdown menu as one of the options.</p>
 </div>
         <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
-            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fnew-site%2f&text=New%20site" target="_blank"
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f2021-01-19-any-linux-distribution-on-windows-10-with-wsl2%2f&text=Any%20Linux%20distribution%20on%20Windows%2010%20with%20WSL2" target="_blank"
                 title="Post" class="share-button x">
                 <div class="text-white text-center">
                     <span class="icon-x text-lg mr-2"></span>X
                 </div>
             </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fnew-site%2f&t=New%20site" target="_blank"
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2f2021-01-19-any-linux-distribution-on-windows-10-with-wsl2%2f&t=Any%20Linux%20distribution%20on%20Windows%2010%20with%20WSL2" target="_blank"
                 title="Facebook" class="share-button facebook">
                 <div class="text-white text-center">
                     <span class="icon-facebook text-lg mr-2"></span>Facebook
                 </div>
             </a>
-            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fnew-site%2f&title=New%20site" target="_blank"
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2f2021-01-19-any-linux-distribution-on-windows-10-with-wsl2%2f&title=Any%20Linux%20distribution%20on%20Windows%2010%20with%20WSL2" target="_blank"
                 title="hatena" class="share-button hatena">
                 <div class="text-white text-center">
                     <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
                 </div>
             </a>
-            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fnew-site%2f&title=New%20site" target="_blank" title="pocket"
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f2021-01-19-any-linux-distribution-on-windows-10-with-wsl2%2f&title=Any%20Linux%20distribution%20on%20Windows%2010%20with%20WSL2" target="_blank" title="pocket"
                 class="share-button pocket">
                 <div class="text-white text-center">
                     <span class="icon-get-pocket text-lg mr-2"></span>Pocket
                 </div>
             </a>
-            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fnew-site%2f" class="share-button line">
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2f2021-01-19-any-linux-distribution-on-windows-10-with-wsl2%2f" class="share-button line">
                 <div class="text-white text-center">
                     <span class="icon-line text-lg mr-2"></span>LINE
                 </div>
             </a>
             <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
-                data-clipboard-text="New site http://localhost:1313/blog/new-site/" id="url">
+                data-clipboard-text="Any Linux distribution on Windows 10 with WSL2 http://localhost:1313/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/" id="url">
                 <div class="text-white text-center">
                     <span class="icon-link text-lg mr-2"></span>Copy
                 </div>
@@ -186,19 +220,12 @@
             <div class="grid grid-cols-2">
                 <div class="col-span-1">
                     
-                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/">
-                        <div
-                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                            <span class="icon-keyboard_arrow_left"></span> Any Linux…
-                        </div>
-                    </a>
-                    
                 </div>
                 
-                <a class="next lg:text-2xl" href="http://localhost:1313/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/">
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/new-site/">
                     <div
                         class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                        Why the F1… <span class="icon-keyboard_arrow_right"></span>
+                        New site <span class="icon-keyboard_arrow_right"></span>
                     </div>
                 </a>
                 
