@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uncategorized on sport-touring.eu</title>
+    <link>http://localhost:1313/categories/uncategorized/</link>
+    <description>Recent content in Uncategorized on sport-touring.eu</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Jan 2021 10:14:30 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New site</title>
+      <link>http://localhost:1313/blog/new-site/</link>
+      <pubDate>Wed, 20 Jan 2021 10:14:30 +0000</pubDate>
+      <guid>http://localhost:1313/blog/new-site/</guid>
+      <description>After building and setting up my new computer and subsequent move away from the Apple Mac ecosystem, I was left with an issue that the site I had built was setup using a Mac-only tool and could not be migrated to Windows. After mucking around with different tools on Windows and hacking things together, I have now decided to go platform independent and recreate my website using the ever popular WordPress CMS.</description>
+    </item>
+  </channel>
+</rss>
