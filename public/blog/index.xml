@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Articles on sport-touring.eu</title>
-    <link>http://localhost:1313/sport-touring.eu/blog/</link>
+    <link>http://localhost:1313/blog/</link>
     <description>Recent content in Articles on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 08 Mar 2023 08:52:34 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/sport-touring.eu/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why the F1 Academy is bad for women in racing</title>
-      <link>http://localhost:1313/sport-touring.eu/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/</link>
+      <link>http://localhost:1313/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/</link>
       <pubDate>Wed, 08 Mar 2023 08:52:34 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/</guid>
+      <guid>http://localhost:1313/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/</guid>
       <description>Before the start of the 2023 F1 season, Formula 1 launched the F1 Academy initiative to be headed by Susie Wolf and get more girls into F1. It is a girl-only series racing on the same tracks F1 is racing. While this is a noble cause, it is my opinion this is the wrong thing to do and it is to the detriment of all girls and women in racing. It will show women as less than men in racing and ultimately achieve the exact opposite of what it wants to do.</description>
     </item>
     <item>
       <title>New site</title>
-      <link>http://localhost:1313/sport-touring.eu/blog/new-site/</link>
+      <link>http://localhost:1313/blog/new-site/</link>
       <pubDate>Wed, 20 Jan 2021 10:14:30 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/blog/new-site/</guid>
+      <guid>http://localhost:1313/blog/new-site/</guid>
       <description>After building and setting up my new computer and subsequent move away from the Apple Mac ecosystem, I was left with an issue that the site I had built was setup using a Mac-only tool and could not be migrated to Windows. After mucking around with different tools on Windows and hacking things together, I have now decided to go platform independent and recreate my website using the ever popular WordPress CMS.</description>
     </item>
     <item>
       <title>Any Linux distribution on Windows 10 with WSL2</title>
-      <link>http://localhost:1313/sport-touring.eu/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/</link>
+      <link>http://localhost:1313/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/</link>
       <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/</guid>
+      <guid>http://localhost:1313/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/</guid>
       <description>Introduction – WSL 2 on Windows 10 introduced the ability to run a native linux kernel on your computer while using Windows 10 as your main operating system. Instead of emulating a Linux kernel, like WSL 1 does, WSL 2 uses a lightweight hypervisor to run linux in parallel with Windows.&#xA;To be able to run WSL 2 on Windows 10, installation of Windows 10 feature update 2004 is required.</description>
     </item>
   </channel>

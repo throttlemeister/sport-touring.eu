@@ -2,69 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/sport-touring.eu/products/example/</loc>
+    <loc>http://localhost:1313/products/example/</loc>
     <lastmod>2020-06-23T12:33:45+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/f1/</loc>
+    <loc>http://localhost:1313/tags/f1/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/f1academy/</loc>
+    <loc>http://localhost:1313/tags/f1academy/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/index/</loc>
+    <loc>http://localhost:1313/tags/index/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/racing/</loc>
+    <loc>http://localhost:1313/tags/racing/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/</loc>
+    <loc>http://localhost:1313/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/</loc>
     <lastmod>2023-03-08T08:52:34+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/blog/new-site/</loc>
+    <loc>http://localhost:1313/blog/new-site/</loc>
     <lastmod>2021-01-20T10:14:30+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/</loc>
+    <loc>http://localhost:1313/blog/2021-01-19-any-linux-distribution-on-windows-10-with-wsl2/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/categories/computer/</loc>
+    <loc>http://localhost:1313/categories/computer/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/windows/</loc>
+    <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/wsl/</loc>
+    <loc>http://localhost:1313/tags/wsl/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/categories/wsl/</loc>
+    <loc>http://localhost:1313/categories/wsl/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/tags/wsl2/</loc>
+    <loc>http://localhost:1313/tags/wsl2/</loc>
     <lastmod>2021-01-19T15:57:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/products/</loc>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2021-01-12T14:39:59+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/products/</loc>
     <lastmod>2020-06-23T12:33:45+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/about/</loc>
+    <loc>http://localhost:1313/about.md/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sport-touring.eu/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
   </url>
 </urlset>

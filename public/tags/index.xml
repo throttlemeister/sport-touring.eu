@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on sport-touring.eu</title>
-    <link>http://localhost:1313/sport-touring.eu/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 08 Mar 2023 08:52:34 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/sport-touring.eu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>F1</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/f1/</link>
+      <link>http://localhost:1313/tags/f1/</link>
       <pubDate>Wed, 08 Mar 2023 08:52:34 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/f1/</guid>
+      <guid>http://localhost:1313/tags/f1/</guid>
       <description></description>
     </item>
     <item>
       <title>F1Academy</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/f1academy/</link>
+      <link>http://localhost:1313/tags/f1academy/</link>
       <pubDate>Wed, 08 Mar 2023 08:52:34 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/f1academy/</guid>
+      <guid>http://localhost:1313/tags/f1academy/</guid>
       <description></description>
     </item>
     <item>
       <title>Index</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/index/</link>
+      <link>http://localhost:1313/tags/index/</link>
       <pubDate>Wed, 08 Mar 2023 08:52:34 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/index/</guid>
+      <guid>http://localhost:1313/tags/index/</guid>
       <description></description>
     </item>
     <item>
       <title>Racing</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/racing/</link>
+      <link>http://localhost:1313/tags/racing/</link>
       <pubDate>Wed, 08 Mar 2023 08:52:34 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/racing/</guid>
+      <guid>http://localhost:1313/tags/racing/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/docker/</link>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/windows/</link>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>Wsl</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/wsl/</link>
+      <link>http://localhost:1313/tags/wsl/</link>
       <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/wsl/</guid>
+      <guid>http://localhost:1313/tags/wsl/</guid>
       <description></description>
     </item>
     <item>
       <title>Wsl2</title>
-      <link>http://localhost:1313/sport-touring.eu/tags/wsl2/</link>
+      <link>http://localhost:1313/tags/wsl2/</link>
       <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
-      <guid>http://localhost:1313/sport-touring.eu/tags/wsl2/</guid>
+      <guid>http://localhost:1313/tags/wsl2/</guid>
       <description></description>
     </item>
   </channel>
