@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>sport-touring.eu | Managing dotfiles using stow on Linux</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="sport-touring.eu | Managing dotfiles using stow on Linux" />
+
+
+
+
+<meta name="description" content="One thing that’s always a bit of a pain when you use multipl">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="sport-touring.eu">
+<meta property="og:description" content="One thing that’s always a bit of a pain when you use multipl">
+<meta property="og:url" content="http://localhost:1313/blog/dotfiles/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/dotfiles/">
+
+<meta name="twitter:description" content="One thing that’s always a bit of a pain when you use multipl">
+<meta property="article:published_time" content="2024-09-17T13:52:22&#43;02:00">
+<meta property="article:updated_time" content="2024-09-17T13:52:22&#43;02:00">
+
+
+
+
+
+    
+<meta property="og:image" content="http://localhost:1313/img/tuxlogo.png">
+    
+
+
+<meta name="twitter:title" content="Managing dotfiles using stow on Linux">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="http://localhost:1313/"><img alt=""
+                    class=" mr-3" src="/"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Home
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Articles
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    About
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl font-bold mb-3">Managing dotfiles using stow on Linux</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
+                2024/09/17 </h4>
+            
+            
+        </section>
+        
+        <img class="my-4" src="http://localhost:1313/img/tuxlogo.png">
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p>One thing that’s always a bit of a pain when you use multiple computers, or when you want to reinstall your computer at some point in time is that you have to recreate your configuration files or ‘dotfiles’ to have everything back as you want again.</p>
+<p>There are several ways of doing this, but recently I came across a little tool called GNU stow. It is a much easier way of managing dotfiles than for instance using a git bare repository.</p>
+<p>How stow works, is you create “stow directory”, in my case dotfiles. Inside that directory you can create further directories for “packages”. For this use, a “package” is basically a collection of files that belong together. Example: a bash directory would store all your bash configuration files like .bashrc, .bash_fucntions, .profile, etc..</p>
+<p>Once you have your “package” directory, you can move your dotfiles for that “package” into that directory. (move, so they are no longer in their normal location). If you now call stow with the package name, for instance stow bash it will create symbolic links from all files to their original location.</p>
+<p>If you have files under ~/.config then you will need to create a .config directory under your package directory, and then move the files or directories that contain your files under there.</p>
+<p>For instance, I have a “package” fish, which has the following structure:</p>
+<pre><code>~/.dotfiles/fish/.config/fish
+</code></pre>
+<p>And under ~/.config you will find a symlink called fish to that directory.</p>
+<p>So the structure is basically this:</p>
+<ul>
+<li>
+<p>Stow directory</p>
+<ul>
+<li>Package directory
+<ul>
+<li>files relative from your home directory</li>
+<li>directories relative from your home directory
+<ul>
+<li>files relative from previous directory</li>
+<li>directories relative from previous directory</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Running stow on a package will link to files and / or directories starting from your home directory down. If a subdirectory is put in there, like the bottom one above, it will use the highest common directory entry to link to.</p>
+<p>Once you have your structure set up under your stow directory, you can simply go into your stow directory and issue the command stow * or stow packagename and all links will be created.</p>
+<p>If you then add your stow directory to a git repository, all you would have to do on a new system or when setting up after install is to clone that repository, make sure you have stow installed and issue the command above to have your setup restored.</p>
+<p>Finally, as a little bonus, I created a little fish shell function because I am lazy and don’t want to cd back and forth all the time to make it easier for me to create the links for a “package”. I use fish shell, but the example below should be easy enough to refactor to bash or zsh functions if you use those.</p>
+<pre><code>function dotfiles --wraps=&quot;stow&quot;
+    if [ -z $argv ]
+        echo &quot;No argument given; exiting&quot;
+    else
+        set _oldpath $PWD
+        cd ~/.dotfiles
+        stow $argv
+        cd $_oldpath
+    end
+end
+</code></pre>
+<p>In conclusion, it take a little bit to set up but once that is done, it is very easy to maintain and setting up your profile configuration becomes so easy.</p>
+<p>Example layout of my dotfiles directory:</p>
+<pre><code>alacritty:
+Permissions Size User            Date Modified Git Name
+.rw-r--r--   355 throttlemeister  2 Aug 23:26   -- .alacritty.toml
+
+bash:
+Permissions Size User            Date Modified Git Name
+.rw-r--r--  1.0k throttlemeister 11 Jun  2023   -- .bash_aliases
+.rw-r--r--  1.1k throttlemeister 11 Jun  2023   -- .bash_functions
+.rw-r--r--   220 throttlemeister 11 Jun  2023   -- .bash_logout
+.rw-r--r--    92 throttlemeister 11 Jun  2023   -- .bash_profile
+.rw-r--r--  4.3k throttlemeister 11 Jun  2023   -- .bashrc
+.rwxr-xr-x    30 throttlemeister 11 Jun  2023   -- .inputrc
+.rw-r--r--   723 throttlemeister 11 Jun  2023   -- .profile
+
+conky:
+Permissions Size User            Date Modified Git Name
+.rw-r--r--   11k throttlemeister 13 Aug 23:32   -- .conkyrc
+
+fish:
+Permissions Size User            Date Modified Git Name
+drwxr-xr-x     - throttlemeister 17 Sep 14:25   -- .config
+
+git:
+Permissions Size User            Date Modified Git Name
+.rw-r--r--   166 throttlemeister 17 Sep 16:48   -- .gitconfig
+.rw-r--r--     4 throttlemeister 11 Jun  2023   -- .gitignore
+
+zsh:
+Permissions Size User            Date Modified Git Name
+.rw-r--r--  4.6k throttlemeister  2 Aug 23:15   -- .zshrc
+.rw-r--r--   374 throttlemeister  2 Aug 22:45   -- .zshrc.pre-oh-my-zsh
+</code></pre>
+</div>
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fdotfiles%2f&text=Managing%20dotfiles%20using%20stow%20on%20Linux" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fdotfiles%2f&t=Managing%20dotfiles%20using%20stow%20on%20Linux" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fdotfiles%2f&title=Managing%20dotfiles%20using%20stow%20on%20Linux" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fdotfiles%2f&title=Managing%20dotfiles%20using%20stow%20on%20Linux" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fdotfiles%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="Managing dotfiles using stow on Linux http://localhost:1313/blog/dotfiles/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/kde-plasma-6-dont-be-fooled-by-the-naysayers-on-the-internet/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> KDE Plasma…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/transactional/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        Transactio… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      sport-touring.eu
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/throttlemeister" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; sport-touring.eu 2024 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>sport-touring.eu | Monitoring your network or homelab using Zabbix and Grafana</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+
+<meta property="og:site_name" content="sport-touring.eu" />
+<meta property="og:title" content="Monitoring your network or homelab using Zabbix and Grafana | sport-touring.eu" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/monitoring-your-network-or-homelab-using-zabbix-and-grafana/" />
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Monitoring your network or homelab using Zabbix and Grafana">
+
+
+<meta property="og:image" content="http://localhost:1313/">
+
+<meta name="description" content="For the longest time, I have been monitoring my network and homelab using Observium. This worked and does work very well. Observium is very good at what it does. However, there are a couple of things that do not work so well for me using Observium:
+Observium does not let me add applications to monitor very easily or at all Observium is limited to what can be offered through SNMP Observium is not open source and as such it cannot be modified or changed to your needs Observium is not an application I have come across in my professional life, so knowing how it works does not help me professionally." />
+<meta property="og:description" content="For the longest time, I have been monitoring my network and homelab using Observium. This worked and does work very well. Observium is very good at what it does. However, there are a couple of things that do not work so well for me using Observium:
+Observium does not let me add applications to monitor very easily or at all Observium is limited to what can be offered through SNMP Observium is not open source and as such it cannot be modified or changed to your needs Observium is not an application I have come across in my professional life, so knowing how it works does not help me professionally." />
+<meta property="twitter:description" content="For the longest time, I have been monitoring my network and homelab using Observium. This worked and does work very well. Observium is very good at what it does. However, there are a couple of things that do not work so well for me using Observium:
+Observium does not let me add applications to monitor very easily or at all Observium is limited to what can be offered through SNMP Observium is not open source and as such it cannot be modified or changed to your needs Observium is not an application I have come across in my professional life, so knowing how it works does not help me professionally." />
+
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="http://localhost:1313/"><img alt=""
+                    class=" mr-3" src="/"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Home
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Articles
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    About
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+  <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+    <h1 class="title text-5xl mb-4">Monitoring your network or homelab using Zabbix and Grafana</h1>
+    <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p>For the longest time, I have been monitoring my network and homelab using Observium. This worked and does work very well. Observium is very good at what it does. However, there are a couple of things that do not work so well for me using Observium:</p>
+<ul>
+<li>Observium does not let me add applications to monitor very easily or at all</li>
+<li>Observium is limited to what can be offered through SNMP</li>
+<li>Observium is not open source and as such it cannot be modified or changed to your needs</li>
+<li>Observium is not an application I have come across in my professional life, so knowing how it works does not help me professionally.</li>
+</ul>
+<p>That last bit is obviously not a necessity, however I do feel it&rsquo;s always a nice thing to be able to apply things you have learned in your homelab into your professional environment.</p>
+<p>After lots of investigations and trial &amp; error, I have settled on using Zabbix for my monitoring needs. Zabbix is open source product that is used a lot in corporate environments and it is very flexible and extensible. Obviously you could add or change code as it is open source, but you don&rsquo;t really need to. As Zabbix is template driven, its functionality can be extended by adding templates and there is a plethora of templates available for Zabbix, both on the Zabbix site itself (<a href="https://share.zabbix.com/">Zabbix Share</a>) as well as places like GitHub. Also, Zabbix can use an agent installed on the system to collect the data you want to monitor, or you can use SNMP if you can&rsquo;t or don&rsquo;t want to install an agent on a device (for instance a network router).</p>
+<p>The one thing I do not like about Zabbix is that the historic view is not easy to get to, nor as pretty displayed in a dashboard-like view as it is in Observium. However, that is not a blocker as we can use Grafana, another open source tool that is used quite a bit in Corporate Land to create dashboards and display relevant historic data.</p>
+<h1 id="installing-zabbix">Installing Zabbix</h1>
+<p>Installing Zabbix is no more complicated than installing most other software on Linux. I installed Zabbix on my Raspberry Pi 2B and the short version is this:</p>
+<p>a. Install the Zabbix repository:</p>
+<pre><code># wget &lt;https://repo.zabbix.com/zabbix/5.4/raspbian/pool/main/z/zabbix-release/zabbix-release_5.4-1+debian10_all.deb&gt;
+# dpkg -i zabbix-release_5.4-1+debian10_all.deb
+# apt update
+</code></pre>
+<p>b. Install the Zabbix server, frontend and agent on the server machine</p>
+<pre><code># apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+</code></pre>
+<p>c. Create the database for Zabbix</p>
+<pre><code># mysql -uroot -ppassword
+mysql&gt; create database zabbix character set utf8 collate utf8_bin;
+mysql&gt; create user zabbix@localhost identified by 'password';
+mysql&gt; grant all privileges on zabbix.* to zabbix@localhost;
+mysql&gt; quit;
+</code></pre>
+<p>And import the database schema</p>
+<pre><code># zcat /usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz | mysql -uzabbix -p zabbix
+</code></pre>
+<p>If your database is not residing on your Zabbix server, you can add -h <!-- raw HTML omitted --> to the above to make sure you are connecting to the remote database server. Also, when creating the user and you are using a remote database, make sure the Zabbix user is allowed to connect over the network to the database.</p>
+<p>d. Configure the Zabbix server to use the database you have created by filling out the relevant fields in /etc/zabbix/zabbix_server.conf</p>
+<p>e. Start your brand-new Zabbix server:</p>
+<pre><code># systemctl restart zabbix-server zabbix-agent apache2
+# systemctl enable zabbix-server zabbix-agent apache2
+</code></pre>
+<p>f. You are done. You can now login to your server on http://<!-- raw HTML omitted -->:3000 and log in with user Admin and password zabbix and configure everything else using the web frontend.</p>
+<h1 id="installing-grafana">Installing Grafana</h1>
+<p>Installing Grafana is equally simple.<br>
+a. Install the pre-requisites and add the repository key</p>
+<pre><code>sudo apt-get install -y apt-transport-https
+sudo apt-get install -y software-properties-common wget
+wget -q -O - &lt;https://packages.grafana.com/gpg.key&gt; | sudo apt-key add -`
+</code></pre>
+<p>b. Add the repository</p>
+<pre><code>echo &quot;deb &lt;https://packages.grafana.com/oss/deb&gt; stable main&quot; | sudo tee -a /etc/apt/sources.list.d/grafana.list
+</code></pre>
+<p>c. Install Grafana</p>
+<pre><code>apt update&lt;br&gt;apt install grafana
+</code></pre>
+<p>d. Then it is just a matter of starting the Grafana server and making sure it starts at boot.</p>
+<pre><code>sudo systemctl daemon-reload
+sudo systemctl start grafana-server
+sudo systemctl status grafana-server
+sudo systemctl enable grafan-server
+</code></pre>
+<p>That&rsquo;s it! You can now log in using the default username/password of admin/admin.</p>
+<p>Note: if you want to apply specific configurations, like for instance database (mysql, postgres, sqlite3) beyond the default, you should refer the Grafana manuals as that would be a bit beyond the scope of this page.</p>
+<h1 id="tying-things-together">Tying things together</h1>
+<p>First you will need to install the Zabbix app into Grafana. We can do this using the commandline interface for Grafana:</p>
+<pre><code>grafana-cli plugins install alexanderzobnin-zabbix-app
+</code></pre>
+<p>After you do this, you can configure the Zabbix datasource. Go to Configuration -&gt; Data sources and click add data source. Scroll down to the bottom, and you will see one called Zabbix'.</p>
+<p>Fill in the details of your Zabbix installation, and make sure you add the api_jsonrpc.php to the end of your URL. Check With credentials&rsquo; under auth and under Zabbix API details add your username and password. Click Save &amp; test and if all is ok, it will give you a green checkmark while saying data source updated.</p>
+<p>You are now ready to add a dashboard to your Grafana and start monitoring your Zabbix data. I use <a href="https://grafana.com/grafana/dashboards/5363">this dashboard</a> from Paulo Paim. You can add it by going to Dashboards -&gt; Manage and then clicking the import button. In the box saying import from grafana.com, type the ID of the dashboard. In this case 5363 and click load.</p>
+<p>That&rsquo;s it!</p>
+<p>Links:</p>
+<ul>
+<li><a href="https://www.zabbix.com/documentation/current/manual">Zabbix manual</a></li>
+<li><a href="https://grafana.com/docs/grafana/latest/">Grafana documentation</a></li>
+<li><a href="https://share.zabbix.com/">Zabbix templates and add-ons</a></li>
+<li>Grafana <a href="https://grafana.com/grafana/dashboards">dashboards</a> and <a href="https://grafana.com/grafana/plugins/">plugins</a></li>
+</ul>
+</div>
+  </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      sport-touring.eu
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/throttlemeister" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; sport-touring.eu 2024 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

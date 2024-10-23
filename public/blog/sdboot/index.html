@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>sport-touring.eu | systemd-boot on OpenSUSE</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="sport-touring.eu | systemd-boot on OpenSUSE" />
+
+
+
+
+<meta name="description" content="Switch from GRUB2 to systemd-boot on OpenSUSE">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="sport-touring.eu">
+<meta property="og:description" content="Switch from GRUB2 to systemd-boot on OpenSUSE">
+<meta property="og:url" content="http://localhost:1313/blog/sdboot/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/sdboot/">
+
+<meta name="twitter:description" content="Switch from GRUB2 to systemd-boot on OpenSUSE">
+<meta property="article:published_time" content="2024-01-18T23:01:17&#43;02:00">
+<meta property="article:updated_time" content="2024-01-18T23:01:17&#43;02:00">
+
+
+
+
+
+<meta property="og:image" content="http://localhost:1313/">
+
+
+<meta name="twitter:title" content="systemd-boot on OpenSUSE">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="http://localhost:1313/"><img alt=""
+                    class=" mr-3" src="/"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Home
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Articles
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    About
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl font-bold mb-3">systemd-boot on OpenSUSE</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
+                2024/01/18 </h4>
+            
+            
+        </section>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p>I am weird sometimes, I know. Ever since I used Pop!OS, which uses systemd-boot as default boot manager, I have fallen in love with it. The simplicity and speed of systemd-boot versus the complexity and bulk of GRUB2 just won me over.</p>
+<p>Mind you, GRUB2 is very good at what it does. It’s just that I don’t need all it does. All I need is to boot my machine, nothing more, nothing less. My laptop, on which I am typing this, only has OpenSUSE installed. No dual boot, nothing. My desktop boots OpenSUSE and FreeBSD at the moment, but they do so from seperate disks with their own bootloader. Nice and simple.</p>
+<p>Neither need the features of GRUB2.</p>
+<p>That said, changing the bootloader is tricky. It’d be nice if OpenSUSE would let you pick systemd-boot at install, so you don’t have to muck with it. However, since end of September, OpenSUSE officially supports systemd-boot.</p>
+<p>So, I just had to have it, starting with my laptop.</p>
+<h2 id="how-to">HOW-TO</h2>
+<p><strong>Note</strong>: I do not use secureboot. Do not blindly follow this tutorial if you are using secure boot: it will break your system. You can do it, but it requires more steps then I will outline here.</p>
+<p>First, check if /usr/lib/bootloader/systemd-boot exists. If it does, you’re good.</p>
+<p>Remove all OpenSUSE entries from the EFI boot menu, and all others you do not need:</p>
+<pre><code># efibootmgr --delete --label opensuse-secureboot
+</code></pre>
+<p>Do this for each entry you do not need or want. You can see what entries there are by just typinge efibootmgr without any options.</p>
+<p>Next we want to update the configuration, so it knows we are going to use systemd-boot.</p>
+<pre><code># vi /etc/sysconfig/bootloader 
+</code></pre>
+<p>Change from (probably) LOADER_TYPE=&ldquo;grub2-efi&rdquo; to LOADER_TYPE=&ldquo;systemd-boot&rdquo;</p>
+<p>Install the systemd-boot utils to add support for snapshots. We are running OpenSUSE, we do want support for our automatic btrfs snapper snapshots.</p>
+<pre><code># zypper in sdbootutil-snapper sdbootutil-rpm-scriptlets
+</code></pre>
+<p>If zypper complains that it needs to remove GRUB2 to do this, confirm by choosing the solution that will do so. It will both add all the files required for systemd-boot to function and remove all grub2 related files that you will not be using anymore.</p>
+<p>Then we want to install our kernels, including snapshots so we can actually boot as we do not have a bootmanager installed right now!</p>
+<pre><code># sdbootutil install
+# sdbootutil add-all-kernels
+</code></pre>
+<p>Now we’re done. Systemd-boot is installed, GRUB2 is removed and we can reboot our system and enjoy a fast and less bloated setup. If you want to get to the boot menu to boot from a snapshot, just hold the spacebar while booting and it will pop up.</p>
+<h2 id="updates">Updates</h2>
+<p>Since this article has been written, systemd-boot has been officially added to the boot options of OpenSUSE Tumbleweed and it is now available during install on an UEFI system.</p>
+</div>
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fsdboot%2f&text=systemd-boot%20on%20OpenSUSE" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fsdboot%2f&t=systemd-boot%20on%20OpenSUSE" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fsdboot%2f&title=systemd-boot%20on%20OpenSUSE" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fsdboot%2f&title=systemd-boot%20on%20OpenSUSE" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fsdboot%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="systemd-boot on OpenSUSE http://localhost:1313/blog/sdboot/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/opensuse-4-months-in/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> OpenSUSE:…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/opensuse-tumbleweed-6-months-in/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        OpenSUSE… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      sport-touring.eu
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/throttlemeister" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; sport-touring.eu 2024 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

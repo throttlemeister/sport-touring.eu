@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>sport-touring.eu | Gentoo on Windows with WSL2</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="sport-touring.eu | Gentoo on Windows with WSL2" />
+
+
+
+
+<meta name="description" content="Introduction WSL 2 on Windows 10 introduced the ability to r">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="sport-touring.eu">
+<meta property="og:description" content="Introduction WSL 2 on Windows 10 introduced the ability to r">
+<meta property="og:url" content="http://localhost:1313/blog/gentoo-on-wsl/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/gentoo-on-wsl/">
+
+<meta name="twitter:description" content="Introduction WSL 2 on Windows 10 introduced the ability to r">
+<meta property="article:published_time" content="2021-01-19T15:55:01&#43;00:00">
+<meta property="article:updated_time" content="2021-01-19T15:55:01&#43;00:00">
+
+
+
+
+
+<meta property="og:image" content="http://localhost:1313/">
+
+
+<meta name="twitter:title" content="Gentoo on Windows with WSL2">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="http://localhost:1313/"><img alt=""
+                    class=" mr-3" src="/"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Home
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Articles
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    About
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl font-bold mb-3">Gentoo on Windows with WSL2</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
+                2021/01/19 </h4>
+            
+            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>throttlemeister
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center">
+                <span class="icon-folder text-2xl mr-1"></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/computer'>Computer</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/wsl'>WSL</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><h1 id="introduction">Introduction</h1>
+<p>WSL 2 on Windows 10 introduced the ability to run a native linux kernel on your computer while using Windows 10 as your main operating system. Instead of emulating a linux kernel, like WSL 1 does, WSL 2 uses a hypervisor to run linux in parallel with Windows.<br>
+To be able to run WSL 2 on Windows 10, installation of Windows 10 feature update 2004 or newer is required.</p>
+<h1 id="enabling-wsl2-support">Enabling WSL2 support</h1>
+<p>Open an administrator PowerShell by pressing Windows + X, then A or select PowerShell (Run as Administrator) from the start menu. Execute the following commands to enable the hypervisor to start on system boot.</p>
+<pre><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
+</code></pre>
+<p>Download the latest stage 3 build from the gentoo website (<a href="https://gentoo.org/downloads/">https://gentoo.org/downloads/</a>). Select the profile which suits your needs. In my case I decided to use the most up-to-date, non-hardened, no-multilib, amd64 stage3 build.</p>
+<p>Quick-Link to index: <a href="https://gentoo.osuosl.org/releases/amd64/autobuilds/current-stage3-amd64-nomultilib/">current-stage3-amd64-nomultilib</a></p>
+<p>non-hardened: This is only a development system, so no hardening is needed.<br>
+no-multilib: Who needs x86 support anyway when compiling from source?<br>
+amd64: Because an up-to-date Windows 10 should be running on an up-to-date amd64 plaform.<br>
+Convert the tar.xz archive into an uncompressed tar archive by opening it with 7-Zip and selecting the extract option from the menu. Or use a Linux distro on WSL already installed. Do not extract the linux filesystem packed in the tar archive.</p>
+<p>Open an administrator command promt / PowerShell by pressing Windows + X, then A or select PowerShell (Run as Administrator) from the start menu. Run the following command to import the userspace image into your WSL configuration. Be sure that you provide full paths and didn&rsquo;t forget the version argument. The destination path can be adjusted to your liking and is preferably on an SSD with at least 25 GB of free space. The import command will create a single virtual disk image (ext4.vhdx) in the destination folder.</p>
+<pre><code>wsl.exe --import &quot;Gentoo&quot; &quot;D:\path\to\your\installation\directory&quot; &quot;C:\path\to\your\folder\stage3-amd64-nomultilib-20191113T214501Z.tar&quot; --version 2
+</code></pre>
+<p>If you forgot the version switch, the result of the command above is an extracted linux filesystem in the specified Windows folder. Remove the distribution with wsl unregister and restart the import operation.</p>
+<h1 id="wsl-setup-in-gentoo">WSL setup in Gentoo</h1>
+<p>As with every new piece of software, the configuration needs some changes on the WSL / Gentoo side to run smoothly. Run the following commands on the Gentoo instance to fix problems with a non-functional nameserver configuration and file system attributes on Windows drives.</p>
+<pre><code>#!/bin/bash
+set -e -x
+
+# Delete auto-generated files
+rm /etc/resolv.conf || true
+rm /etc/wsl.conf || true
+
+# Enable changing /etc/resolv.conf
+# Enable extended attributes on Windows drives
+cat EOF  /etc/wsl.conf
+[network]
+generateResolvConf = false
+
+[automount]
+enabled = true
+options = &quot;metadata&quot;
+mountFsTab = false
+EOF
+
+# Use google nameservers for DNS resolution
+cat EOF /etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF
+</code></pre>
+<p>Create a .wslconfig configuration file for WSL in the Windows user directory. This is necessary to set a maximum size limit of the RAM which WSL may consume. Sometimes the linux kernel uses a portion of the free memory as cache and therefore will start to eat away all RAM of the host system. This can be mitigated by setting the memory configuration option. Replace YOURUSERNAME with your Windows username in the script below.</p>
+<pre><code>#!/bin/bash
+set -e -x
+
+cat EOF  /mnt/c/Users/YOURUSERNAME/.wslconf
+[wsl2]
+#kernel=
+memory=8GB
+#processors=
+#swap=
+#swapFile=
+localhostForwarding=true
+EOF
+</code></pre>
+<p>Now close all instances of Gentoo / WSL and stop the virtual machine by opening the Command Prompt (Windows-Key + X, then A) and issuing the command wsl shutdown.</p>
+<h1 id="gentoo-setup-in-wsl">Gentoo setup in WSL</h1>
+<p>Run all following commands in the Gentoo instance.</p>
+<p>For gentoo to work correctly under the hypervisor some feature flags have to be disabled. Open the file /etc/portage/make.conf and adjust the following settings. Below is an example configuration used for my system.</p>
+<p>Add FEATURES=-ipc-sandbox -pid-sandbox -mount-sandbox -network-sandbox to disbable the non-functional sandboxing features<br>
+Adjust COMMON_FLAGS to match your PC architecture.<br>
+Adjust USE to your needs<br>
+Ajdust MAKEOPTS to the number of CPU cores (+1) to make the compilation faster<br>
+The other options are all optional</p>
+<pre><code># No GUI (-X -gtk), only english error messages (-nls)
+USE=&quot;-X -gtk -nls&quot;
+
+# Enable python 3.7 and set 3.6 as default
+PYTHON_TARGETS=&quot;python3_6 python3_7&quot;
+PYTHON_SINGLE_TARGET=&quot;python3_6&quot;
+
+# Define targets for QEMU
+QEMU_SOFTMMU_TARGETS=&quot;aarch64 arm i386 riscv32 riscv64 x86_64&quot;
+QEMU_USER_TARGETS=&quot;aarch64 arm i386 riscv32 riscv64 x86_64&quot;
+
+# No hardware videocard support
+VIDEO_CARDS=&quot;dummy&quot;
+
+# Disable non-functional sandboxing features
+FEATURES=&quot;-ipc-sandbox -pid-sandbox -mount-sandbox -network-sandbox&quot;
+
+# Always ask when managing packages, always consider deep dependencies (slow) EMERGE_DEFAULT_OPTS=&quot;--ask --complete-graph&quot;
+
+# Enable optimizations for the used CPU
+COMMON_FLAGS=&quot;-march=haswell -O2 -pipe&quot;
+CHOST=&quot;x86_64-pc-linux-gnu&quot;
+CFLAGS=&quot;NULL&quot;
+CXXFLAGS=&quot;NULL&quot;
+FCFLAGS=&quot;NULL&quot;
+FFLAGS=&quot;NULL&quot;
+MAKEOPTS=&quot;-j5&quot;
+
+# NOTE: This stage was built with the bindist Use flag enabled
+PORTDIR=&quot;/var/db/repos/gentoo&quot;
+DISTDIR=&quot;/var/cache/distfiles&quot;
+PKGDIR=&quot;/var/cache/binpkgs&quot;
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+</code></pre>
+<h1 id="final-installation-steps">Final installation steps</h1>
+<p>To finish the Gentoo installation a new snapshot of the ebuild repository should be downloaded. A recompilation of the compiler ensures that GCC is on the most recent stable version. After updating GCC a recompilation of all programs / libraries ensures that the set optimizations take effect.</p>
+<pre><code>#!/bin/bash
+set -e -x
+
+# Download a snapshot of all official ebuilds
+emerge-webrsync
+
+# Upgrade the compiler and the required libtool library
+emerge --oneshot --deep sys-devel/gcc
+emerge --oneshot --usepkg=n sys-devel/libtool
+
+# Update all packages with the newly built compiler
+# This will take a long time, ~1-5 hours
+emerge --oneshot --emptytree --deep @world
+emerge --oneshot --deep @preserved-rebuild
+emerge --ask --depclean
+</code></pre>
+<h1 id="enabling-overlays-for-portage">Enabling overlays for portage</h1>
+<p>Eselect provides an easy integration of overlays into portage. The main portage respository should already be configured properly, so only a simple installation of eselect is necessary. For more information see the official wiki. Run the command shown below to install the repository module for eselect.</p>
+<pre><code>#!/bin/bash
+
+# Install portage overlays
+emerge --ask app-eselect/eselect-repository
+</code></pre>
+<p>The configuration for the plugin is located in the /etc/eselect/repository.conf file. The default path of the repository index is specified by the REPOS_CONF option which points to /etc/portage/repos.conf by default. Make sure that this directory exists or create it with the following command.</p>
+<pre><code>mkdir -p /etc/portage/repos.conf
+</code></pre>
+<p>A file named gentoo.conf should be located in this directory (/etc/portage/repos.conf) which holds the configuration for the main gentoo repository. Below is an example default configuration file which was created on my system.</p>
+<pre><code>[DEFAULT]
+main-repo = gentoo
+
+[gentoo]
+location = /var/db/repos/gentoo
+sync-type = rsync
+sync-uri = rsync://rsync.de.gentoo.org/gentoo-portage/
+auto-sync = yes
+sync-rsync-verify-jobs = 1
+sync-rsync-verify-metamanifest = yes
+sync-rsync-verify-max-age = 24
+sync-openpgp-key-path = /usr/share/openpgp-keys/gentoo-release.asc
+sync-openpgp-keyserver = hkps://keys.gentoo.org
+sync-openpgp-key-refresh-retry-count = 40
+sync-openpgp-key-refresh-retry-overall-timeout = 1200
+sync-openpgp-key-refresh-retry-delay-exp-base = 2
+sync-openpgp-key-refresh-retry-delay-max = 60
+sync-openpgp-key-refresh-retry-delay-mult = 4
+sync-webrsync-verify-signature = yes
+</code></pre>
+<p>The synchronization of emerge can now be done via the command below. This might take some time, depending on the internet speed and if the repository was synchronized before.</p>
+<pre><code>emerge sync
+</code></pre>
+<h1 id="using-git-for-portage-sync">Using Git for portage sync</h1>
+<p>An alternative method to sync the portage repository is to use git. For this the git package has to be installed on the system as shown below.</p>
+<pre><code>#!/bin/bash
+
+# Install the git version control system
+emerge --ask dev-vcs/git
+</code></pre>
+<p>Edit the<strong>sync-type</strong>and<strong>sync-uri</strong>in the portage configuration file under /etc/portage/repos.conf/gentoo.conf as shown below.</p>
+<pre><code>[DEFAULT]
+main-repo = gentoo
+
+[gentoo]
+location = /var/db/repos/gentoo
+#sync-type = rsync
+#sync-uri = rsync://rsync.de.gentoo.org/gentoo-portage/
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/gentoo.git
+auto-sync = yes
+sync-rsync-verify-jobs = 1
+sync-rsync-verify-metamanifest = yes
+sync-rsync-verify-max-age = 24
+sync-openpgp-key-path = /usr/share/openpgp-keys/gentoo-release.asc
+sync-openpgp-keyserver = hkps://keys.gentoo.org
+sync-openpgp-key-refresh-retry-count = 40
+sync-openpgp-key-refresh-retry-overall-timeout = 1200
+sync-openpgp-key-refresh-retry-delay-exp-base = 2
+sync-openpgp-key-refresh-retry-delay-max = 60
+sync-openpgp-key-refresh-retry-delay-mult = 4
+sync-webrsync-verify-signature = yes
+</code></pre>
+<p>Portage will now complain when synchronizing with git for the first time that the repository folder is not empty and that the folder can not be used to clone the git repository into it. This can be fixed by deleting the old rsync-managed repository which is located under /var/db/repos/gentoo when using the default configuration. Use the command below to do this.</p>
+<pre><code>#!/bin/bash
+
+# Remove old and generate new repository
+rm -r /var/db/repos/gentoo
+emerge --sync
+
+# Sync twice to test synchronization speed
+emerge --sync&lt;/code&gt;&lt;/pre&gt;
+
+**Final bits and bobs and clean-up** Now that we have Gentoo installed and working in WSL2, we should do some cleaning up and do some things to make our lives easier.
+
+First, it would a good idea right now to create and export of our installed Gentoo WSL distribution.
+
+    wsl.exe --export Gentoo gentoo.tar
+</code></pre>
+<p>Store this file somewhere safe. You can use this later to import the Gentoo again if needed, or use it on another computer without having to go through all the steps above.</p>
+<p>Now would also be a good time to add a user to Gentoo that you would normally use, instead of using root. If you are installing Gentoo and have come this far, I probably don&rsquo;t need to explain how to create a user on Linux. So I am not going to.</p>
+<p>After you have created the user, note the user ID. Normally, this would be 1000.</p>
+<p>To set the default user for Gentoo to use, we cannot use the normal procedure as used for distributions installed from the Windows store. Instead, we need to open the registry editor and navigate to:</p>
+<pre><code>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<p>You will see a list of folders with seemingly random names. One of these is for Gentoo, probably the bottom one. Find the one for Gentoo, and edit the key named DefaultUid and set the value to (decimal) 1000 or the number from your user ID if it is something else.</p>
+<p><strong>WARNING</strong>: if you do this before you have created your username on Gentoo, the distribution will be unusable, however you can fix it by changing the DefaultUid back to zero. Changes are in effect immediately; no need to reboot after changing this value.</p>
+<p><strong>PRO TIP</strong>: If you want to be able to change parameters using the .exe of the distribution as you can when you are using for instance Ubuntu or Debian from the store, grab the .exe from one of these store distro&rsquo;s and put it in the directory where you installed Gentoo. Then rename the file to the name of the distribution as you have added it to WSL. You can now start your distribution using that .exe and for instance set the default user the normal way.</p>
+</div>
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgentoo-on-wsl%2f&text=Gentoo%20on%20Windows%20with%20WSL2" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fgentoo-on-wsl%2f&t=Gentoo%20on%20Windows%20with%20WSL2" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgentoo-on-wsl%2f&title=Gentoo%20on%20Windows%20with%20WSL2" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgentoo-on-wsl%2f&title=Gentoo%20on%20Windows%20with%20WSL2" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fgentoo-on-wsl%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="Gentoo on Windows with WSL2 http://localhost:1313/blog/gentoo-on-wsl/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/any-linux-distribution-on-windows-10-with-wsl2/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        Any Linux… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      sport-touring.eu
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/throttlemeister" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; sport-touring.eu 2024 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

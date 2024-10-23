@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lxc on sport-touring.eu</title>
+    <link>http://localhost:1313/tags/lxc/</link>
+    <description>Recent content in Lxc on sport-touring.eu</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 13 Feb 2021 09:40:20 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Did you know... (or, RHEL on LXC/LXD)</title>
+      <link>http://localhost:1313/blog/rhel-on-lxc-lxd/</link>
+      <pubDate>Sat, 13 Feb 2021 09:40:20 +0000</pubDate>
+      <guid>http://localhost:1313/blog/rhel-on-lxc-lxd/</guid>
+      <description>There are no RedHat Enterprise Linux (RHEL) LXC/LXD container images publicly available? There are LXC/LXD container images available for CentOS and Fedora? You can convert a CentOS install to RHEL using the Convert2RHEL tool? This also works for a LXC/LXD container? You will need to do this if you want to run RHEL on Proxmox in a LXC container? You can create a tarbal of a running system to import into a vanilla LXC/LXD installation?</description>
+    </item>
+  </channel>
+</rss>

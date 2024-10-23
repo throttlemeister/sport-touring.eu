@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Monitoring on sport-touring.eu</title>
+    <link>http://localhost:1313/categories/monitoring/</link>
+    <description>Recent content in Monitoring on sport-touring.eu</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Jul 2021 21:30:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoring your network or homelab using Zabbix and Grafana</title>
+      <link>http://localhost:1313/monitoring-your-network-or-homelab-using-zabbix-and-grafana/</link>
+      <pubDate>Mon, 26 Jul 2021 21:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/monitoring-your-network-or-homelab-using-zabbix-and-grafana/</guid>
+      <description>For the longest time, I have been monitoring my network and homelab using Observium. This worked and does work very well. Observium is very good at what it does. However, there are a couple of things that do not work so well for me using Observium:&#xA;Observium does not let me add applications to monitor very easily or at all Observium is limited to what can be offered through SNMP Observium is not open source and as such it cannot be modified or changed to your needs Observium is not an application I have come across in my professional life, so knowing how it works does not help me professionally.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,19 +6,82 @@
     <description>Recent content in Categories on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Jan 2021 15:57:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 May 2024 21:34:58 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Computer</title>
       <link>http://localhost:1313/categories/computer/</link>
-      <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
+      <pubDate>Thu, 02 May 2024 21:34:58 +0000</pubDate>
       <guid>http://localhost:1313/categories/computer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desktop</title>
+      <link>http://localhost:1313/categories/desktop/</link>
+      <pubDate>Thu, 02 May 2024 21:34:58 +0000</pubDate>
+      <guid>http://localhost:1313/categories/desktop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KDE</title>
+      <link>http://localhost:1313/categories/kde/</link>
+      <pubDate>Thu, 02 May 2024 21:34:58 +0000</pubDate>
+      <guid>http://localhost:1313/categories/kde/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/categories/linux/</link>
+      <pubDate>Thu, 02 May 2024 21:34:58 +0000</pubDate>
+      <guid>http://localhost:1313/categories/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenSUSE</title>
+      <link>http://localhost:1313/categories/opensuse/</link>
+      <pubDate>Sat, 02 Mar 2024 23:50:13 +0000</pubDate>
+      <guid>http://localhost:1313/categories/opensuse/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BSD</title>
+      <link>http://localhost:1313/categories/bsd/</link>
+      <pubDate>Tue, 10 Oct 2023 17:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/bsd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containers</title>
+      <link>http://localhost:1313/categories/containers/</link>
+      <pubDate>Wed, 03 May 2023 12:59:04 +0000</pubDate>
+      <guid>http://localhost:1313/categories/containers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/categories/homelab/</link>
+      <pubDate>Wed, 03 May 2023 12:59:04 +0000</pubDate>
+      <guid>http://localhost:1313/categories/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitoring</title>
+      <link>http://localhost:1313/categories/monitoring/</link>
+      <pubDate>Mon, 26 Jul 2021 21:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualization</title>
+      <link>http://localhost:1313/categories/virtualization/</link>
+      <pubDate>Sat, 13 Feb 2021 10:09:41 +0000</pubDate>
+      <guid>http://localhost:1313/categories/virtualization/</guid>
       <description></description>
     </item>
     <item>
       <title>WSL</title>
       <link>http://localhost:1313/categories/wsl/</link>
-      <pubDate>Tue, 19 Jan 2021 15:57:01 +0000</pubDate>
+      <pubDate>Sat, 30 Jan 2021 22:16:31 +0000</pubDate>
       <guid>http://localhost:1313/categories/wsl/</guid>
       <description></description>
     </item>

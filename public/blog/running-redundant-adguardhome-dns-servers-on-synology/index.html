@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>sport-touring.eu | Running redundant AdGuard@Home DNS servers on Synology</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="sport-touring.eu | Running redundant AdGuard@Home DNS servers on Synology" />
+
+
+
+
+<meta name="description" content="This is a quick post on how to run multiple instances of AdG">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="sport-touring.eu">
+<meta property="og:description" content="This is a quick post on how to run multiple instances of AdG">
+<meta property="og:url" content="http://localhost:1313/blog/running-redundant-adguardhome-dns-servers-on-synology/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/running-redundant-adguardhome-dns-servers-on-synology/">
+
+<meta name="twitter:description" content="This is a quick post on how to run multiple instances of AdG">
+<meta property="article:published_time" content="2023-05-03T12:59:04&#43;00:00">
+<meta property="article:updated_time" content="2023-05-03T12:59:04&#43;00:00">
+
+
+
+
+
+<meta property="og:image" content="http://localhost:1313/">
+
+
+<meta name="twitter:title" content="Running redundant AdGuard@Home DNS servers on Synology">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="http://localhost:1313/"><img alt=""
+                    class=" mr-3" src="/"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Home
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Articles
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    About
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl font-bold mb-3">Running redundant AdGuard@Home DNS servers on Synology</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
+                2023/05/03 </h4>
+            
+            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>throttlemeister
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center">
+                <span class="icon-folder text-2xl mr-1"></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/computer'>Computer</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/containers'>containers</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/homelab'>homelab</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/linux'>Linux</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p>This is a quick post on how to run multiple instances of AdGuard@Home on a single Synology host using Docker.</p>
+<p><strong>Problem</strong>: you cannot easily, using Docker, run multiple instances of the same program - or different program - while listening on the same port.</p>
+<p><strong>Solution</strong>: do not use host or bridge networking, but put the container on the same network as the host using macvlan.</p>
+<p>To achieve this, we need to do the following:</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>Find the name of the network interface your Synology is using to connect to the network you want your Docker containers to be running on. This can be for instance eth0 for a single interface, or bond0 for when you use channel bonding. You can find this under Control Panel &gt; Network &gt; Network interface. In my case, this is bond0 which is what I will use in the examples below.</li>
+</ul>
+<h1 id="configuring-the-interface">Configuring the interface</h1>
+<p>Now we have to configure the interface Docker can use. We do this by adding a bridge on top of the existing physical interface you use on your network.</p>
+<ul>
+<li>ip link add macvlan-br0 link bond0 type macvlan mode bridge<!-- raw HTML omitted -->This adds a bridge device on top of the physical interface with the name macvlan-br0</li>
+<li>ip addr add 192.168.0.254/32 dev macvlan-br0<!-- raw HTML omitted -->This adds an IP address on the bridge device so the host has an IP address in the range will give to Docker</li>
+<li>ip link set macvlan-br0 up<!-- raw HTML omitted -->This will activate the virtual bridge device</li>
+<li>ip route add 192.168.0.192/26 dev macvlan-br0<!-- raw HTML omitted -->This will add a route to the Docker network so it can be reached</li>
+</ul>
+<p>You will have to put this in a script you can run at boot of your Synology device, as these settings will not retain over a reboot as we have to make them on the commandline and cannot make them in the Synology DSM.</p>
+<pre><code>#!/bin/bash
+#
+# Set timeout to wait host network is up and running
+sleep 60
+#
+# Recreate the host macvlan bridge
+ip link add macvlan-br0 link bond0 type macvlan mode bridge
+ip addr add 192.168.0.254/32 dev macvlan-br0
+ip link set macvlan-br0 up
+ip route add 192.168.0.192/26 dev macvlan-br0&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<h1 id="docker">Docker</h1>
+<p>Now that we have set up the host, we can continue creating a new network in Docker that can be used by our containers. To do this, type:</p>
+<pre><code>docker network create -d macvlan \
+--subnet=192.168.0.0/24 \
+--gateway=192.168.0.1 \
+--ip-range=192.168.0.192/26 \
+--aux-address 'host=192.168.0.50' \
+-o parent=bond0 macvlan-br0
+</code></pre>
+<p>This will create a network in Docker on the subnet of your network in a dedicated range of IP addresses using your physical interface and virtual bridge device.</p>
+<p>Do make sure the IP range you specify for Docker is not part of your DHCP scope, if you are also running DHCP or you will get IP conflicts. Docker does not use DHCP, and instead will just hand out IP addresses from this range in order to each container.</p>
+<p>Now you can create your Docker containers as usual and configure them to use this network, instead of the standard host or bridge networks Docker uses by default. You can also assign this network to existing containers if you want.</p>
+<h1 id="install-container">Install container</h1>
+<p>To install AdGuard@Home on your Synology, open Docker, go to Registry and search for adguard</p>
+<p>Double click to download the latest version.</p>
+<p>When it is done downloading, you can go to the Container section, and hit create. A window will popup where you can select your freshly downloaded image.
+Select it and click next to follow the instructions. Configure what you want, but make sure to select the macvlan network when you get to the screen to pick the network.</p>
+<p>Congratulations! Test your new container that is now present on your local network.</p>
+<p><strong>Important note</strong>: if you are running the DNS server on your Synology for your local network, and you want to keep using that, make sure you configure your AdGuard as DNS for your clients, and add the following to your AdGuard DNS configuration under upstream servers:</p>
+<pre><code>[/domain.local/]192.168.0.254:53
+</code></pre>
+<p>This will instruct AdGuard to use the IP address you added to your bridge device at the beginning as the source for resolving domain.local hosts.</p>
+<p>The complete upstream section for me looks something like (I use Cloudfare DNS for internet, and Synology DNS for local addresses):</p>
+<pre><code>tls://1.1.1.1
+tls://1.0.0.1
+[/domain.local/]192.168.0.254:53
+</code></pre>
+<p><strong>Do not</strong> use the real IP address of your Synology host; this is not reachable for Docker and will not work! Use the bridge device address instead.</p>
+</div>
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2frunning-redundant-adguardhome-dns-servers-on-synology%2f&text=Running%20redundant%20AdGuard%40Home%20DNS%20servers%20on%20Synology" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2frunning-redundant-adguardhome-dns-servers-on-synology%2f&t=Running%20redundant%20AdGuard%40Home%20DNS%20servers%20on%20Synology" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2frunning-redundant-adguardhome-dns-servers-on-synology%2f&title=Running%20redundant%20AdGuard%40Home%20DNS%20servers%20on%20Synology" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2frunning-redundant-adguardhome-dns-servers-on-synology%2f&title=Running%20redundant%20AdGuard%40Home%20DNS%20servers%20on%20Synology" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2frunning-redundant-adguardhome-dns-servers-on-synology%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="Running redundant AdGuard@Home DNS servers on Synology http://localhost:1313/blog/running-redundant-adguardhome-dns-servers-on-synology/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/2023-03-08-why-the-f1-academy-is-bad-for-women-in-racing/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> Why the F1…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/the-end-to-distro-hopping/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        The end to… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      sport-touring.eu
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/throttlemeister" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; sport-touring.eu 2024 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

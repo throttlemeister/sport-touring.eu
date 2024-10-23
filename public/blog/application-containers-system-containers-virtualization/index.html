@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>sport-touring.eu | As short as possible: application containers, system containers, virtualization</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="sport-touring.eu | As short as possible: application containers, system containers, virtualization" />
+
+
+
+
+<meta name="description" content="Sometimes, there is a bit of confusion as to what the differ">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="sport-touring.eu">
+<meta property="og:description" content="Sometimes, there is a bit of confusion as to what the differ">
+<meta property="og:url" content="http://localhost:1313/blog/application-containers-system-containers-virtualization/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/application-containers-system-containers-virtualization/">
+
+<meta name="twitter:description" content="Sometimes, there is a bit of confusion as to what the differ">
+<meta property="article:published_time" content="2021-02-13T10:09:41&#43;00:00">
+<meta property="article:updated_time" content="2021-02-13T10:09:41&#43;00:00">
+
+
+
+
+
+<meta property="og:image" content="http://localhost:1313/">
+
+
+<meta name="twitter:title" content="As short as possible: application containers, system containers, virtualization">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="http://localhost:1313/"><img alt=""
+                    class=" mr-3" src="/"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Home
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Articles
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    About
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl font-bold mb-3">As short as possible: application containers, system containers, virtualization</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
+                2021/02/13 </h4>
+            
+            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>throttlemeister
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center">
+                <span class="icon-folder text-2xl mr-1"></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/computer'>Computer</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/containers'>containers</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/virtualization'>virtualization</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p>Sometimes, there is a bit of confusion as to what the difference is between application containers (Docker, Podman, K8S, OpenShift), system containers (LXC/LXD) and virtualization (KVM, Vmware, Hyper-V, Xen) and when you should use them. I will try to explain the differences as short as possible.</p>
+<h1 id="application-containers">Application containers</h1>
+<p>Application containers are created with the most minimal environment to run a specific application. This includes the OS and all dependencies for that application. Every tool or program normally present in the OS that is not needed to run the application is typically left out so that the container image is a small as possible and performs as fast as possible.</p>
+<p>Examples of application containers are Docker, Podman, Kubernetes and OpenShift.</p>
+<h1 id="system-containers">System containers</h1>
+<p>System containers are typically as the minimal environment needed to run a specific operating system. All the basic tools are present, including the package manager so you can set up the system as you want with all the tools you need. A system container is like a virtual machine, but without the hardware virtualization layer. A system container uses and identifies the host hardware and runs the same kernel as the host. This means it is much lighter on resources than full blown virtualization, but also that in certain cases it can be incompatible with certain software.</p>
+<p>Examples of system containers are LXC, LXD</p>
+<h1 id="virtualization">Virtualization</h1>
+<p>Virtualization is software that emulates the hardware so that more than one virtual machines can be installed on the same physical hardware at the same time. As the full hardware layer needs to be simulated, it has the most overhead of these options but it also is the most compatible with all software.</p>
+<p>There are two types of virtualization:</p>
+<ol>
+<li>Type 1 hypervisors: virtualization is done by the kernel, providing low-level access to the physical hardware for the virtualization software for increased performance.<br>
+Examples of Type 1 hypervisors: KVM, Vmware ESXi, Hyper-V Server</li>
+<li>Type 2 hypervisors: virtualization is done by an application installed on an operating system. Access to hardware must be done through the OS and no direct access is possible. IT provides convenience over performance, as it can run on any sytem.<br>
+Examples of Type 2 hypervisors: Vmware Workstation, VirtualBox, Hyper-V manager</li>
+</ol>
+</div>
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fapplication-containers-system-containers-virtualization%2f&text=As%20short%20as%20possible%3a%20application%20containers%2c%20system%20containers%2c%20virtualization" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2fapplication-containers-system-containers-virtualization%2f&t=As%20short%20as%20possible%3a%20application%20containers%2c%20system%20containers%2c%20virtualization" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2fapplication-containers-system-containers-virtualization%2f&title=As%20short%20as%20possible%3a%20application%20containers%2c%20system%20containers%2c%20virtualization" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fapplication-containers-system-containers-virtualization%2f&title=As%20short%20as%20possible%3a%20application%20containers%2c%20system%20containers%2c%20virtualization" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2fapplication-containers-system-containers-virtualization%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="As short as possible: application containers, system containers, virtualization http://localhost:1313/blog/application-containers-system-containers-virtualization/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/rhel-on-lxc-lxd/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> Did you…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/monitoring-your-network-or-homelab-using-zabbix-and-grafana/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        Monitoring… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      sport-touring.eu
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/throttlemeister" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; sport-touring.eu 2024 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

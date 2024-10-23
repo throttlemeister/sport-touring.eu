@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homelab on sport-touring.eu</title>
+    <link>http://localhost:1313/categories/homelab/</link>
+    <description>Recent content in Homelab on sport-touring.eu</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 May 2023 12:59:04 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running redundant AdGuard@Home DNS servers on Synology</title>
+      <link>http://localhost:1313/blog/running-redundant-adguardhome-dns-servers-on-synology/</link>
+      <pubDate>Wed, 03 May 2023 12:59:04 +0000</pubDate>
+      <guid>http://localhost:1313/blog/running-redundant-adguardhome-dns-servers-on-synology/</guid>
+      <description>This is a quick post on how to run multiple instances of AdGuard@Home on a single Synology host using Docker.&#xA;Problem: you cannot easily, using Docker, run multiple instances of the same program - or different program - while listening on the same port.&#xA;Solution: do not use host or bridge networking, but put the container on the same network as the host using macvlan.&#xA;To achieve this, we need to do the following:</description>
+    </item>
+    <item>
+      <title>Monitoring your network or homelab using Zabbix and Grafana</title>
+      <link>http://localhost:1313/monitoring-your-network-or-homelab-using-zabbix-and-grafana/</link>
+      <pubDate>Mon, 26 Jul 2021 21:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/monitoring-your-network-or-homelab-using-zabbix-and-grafana/</guid>
+      <description>For the longest time, I have been monitoring my network and homelab using Observium. This worked and does work very well. Observium is very good at what it does. However, there are a couple of things that do not work so well for me using Observium:&#xA;Observium does not let me add applications to monitor very easily or at all Observium is limited to what can be offered through SNMP Observium is not open source and as such it cannot be modified or changed to your needs Observium is not an application I have come across in my professional life, so knowing how it works does not help me professionally.</description>
+    </item>
+  </channel>
+</rss>

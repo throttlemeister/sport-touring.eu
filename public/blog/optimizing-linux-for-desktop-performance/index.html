@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<title>sport-touring.eu | Optimizing Linux for desktop performance</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href='/apple-touch-icon.png'>
+<link rel="icon" type="image/png" sizes="32x32" href='/favicon-32x32.png'>
+<link rel="icon" type="image/png" sizes="16x16" href='/favicon-16x16.png'>
+<link rel="manifest" href='/site.webmanifest'>
+
+<link href='/css/fa6.min.css' rel="stylesheet" type="text/css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link href='/css/style.min.css' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='/css/custom.css'>
+
+<meta property="og:title" content="sport-touring.eu | Optimizing Linux for desktop performance" />
+
+
+
+
+<meta name="description" content="My daily driver is currently Pop!_OS, which is a desktop Lin">
+<meta property="og:title" content=" | " />
+<meta property="og:site_name" content="sport-touring.eu">
+<meta property="og:description" content="My daily driver is currently Pop!_OS, which is a desktop Lin">
+<meta property="og:url" content="http://localhost:1313/blog/optimizing-linux-for-desktop-performance/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tech_chiba">
+
+<link rel="canonical" href="http://localhost:1313/blog/optimizing-linux-for-desktop-performance/">
+
+<meta name="twitter:description" content="My daily driver is currently Pop!_OS, which is a desktop Lin">
+<meta property="article:published_time" content="2021-11-17T19:31:00&#43;00:00">
+<meta property="article:updated_time" content="2021-11-17T19:31:00&#43;00:00">
+
+
+
+
+
+<meta property="og:image" content="http://localhost:1313/">
+
+
+<meta name="twitter:title" content="Optimizing Linux for desktop performance">
+<link rel="preload" href='/css/sweetalert2.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow"><header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>Home</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>Articles</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="http://localhost:1313/"><img alt=""
+                    class=" mr-3" src="/"></a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Home
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    Articles
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    About
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+</header><div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl font-bold mb-3">Optimizing Linux for desktop performance</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
+                2021/11/17 </h4>
+            
+            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>throttlemeister
+            </h4>
+            
+            
+            <div id="categories" class="flex flex-row items-center">
+                <span class="icon-folder text-2xl mr-1"></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/computer'>Computer</a></span>
+                
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='http://localhost:1313/categories/linux'>Linux</a></span>
+                
+            </div>
+            
+        </section>
+        
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1"><p>My daily driver is currently Pop!_OS, which is a desktop Linux distribution. It&rsquo;s a very nice distribution, really good with Nvidia hardware (which isn&rsquo;t a given on Linux) and, to me, a Gnome look that is very close to what I want so my GUI changes are minimal.</p>
+<p>What&rsquo;s less, and that is a more generic Linux problem, is that particularly the Linux kernel is optimized for server use and not desktop. It prioritizes throughput over latency, which is great for raw performance but less if you expect a smooth, fast GUI.</p>
+<p>We can fix that.</p>
+<h1 id="kernel">Kernel</h1>
+<p>This first one is optional and controversial. Many will say a custom kernel is not needed and does not add anything. On my computer however, using the <a href="https://xanmod.org/">Xanmod</a> kernel does make the GUI significantly faster and smoother. Installation instruction are on their page.</p>
+<p>Second, we want to pass two boot parameters to the kernel when booting. If using systemd-boot, like Pop! does, open the corresponding file under <code>/boot/efi/loader/entries</code> and add:</p>
+<pre><code>nvme_core.default_ps_max_latency_us=0 pcie_aspm=off
+</code></pre>
+<p>to the line starting with options.</p>
+<p>If using grub, add the same to the line <code>GRUB_CMDLINE_LINU</code>X_DEFAULT under <code>/etc/default/grub</code> and do a update-grub to activate.</p>
+<h1 id="options">Options</h1>
+<p>Part two is modifying the sysctl parameters. Under <code>/etc/sysctl.d</code> you will find files that set certain parameters on how your system works. Create a new file, and add the following:</p>
+<pre><code># These are settings from /etc/sysctl.d/ and can be activated by running sysctl --system as root
+# Save this file in that location.
+#
+# These settings set the disk caching for the system
+#
+vm.dirty_bytes = 33554432
+vm.dirty_background_bytes = 8388608
+vm.dirty_writeback_centisecs = 100
+vm.dirty_expire_centisecs = 300
+#
+# We need to either use *_ratio, or we need to use *_bytes. We cannot use both. Currently
+# using _bytes, so disabling _ratio
+#
+# vm.dirty_background_ratio = 10
+# vm.dirty_ratio = 80
+#
+vm.page-cluster = 0
+# Increased to improve random IO performance
+fs.aio-max-nr = 1048576&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<p>This will set certain parameters pertaining to disk caching and IO performance. You can activate by running sysctl system as root, or by rebooting your system.</p>
+<h1 id="disk">Disk</h1>
+<p>To optimize your disks, if you are using SSD, it&rsquo;s worth it to make some changes to your <code>/etc/fstab</code>. There&rsquo;s two parts to this:</p>
+<ol>
+<li>Mount the root filesystem with settings optimized for SSD&rsquo;s</li>
+<li>Ensure temporary directories are running from memory by mounting them in a tmpfs to limit disk writes and extend the life of your SSD.</li>
+</ol>
+<p>For the first one, I mount my root device in <code>/etc/fstab</code> like:</p>
+<pre><code>device  /  btrfs  defaults,ssd,noatime  0  0
+</code></pre>
+<p>For the second, add these lines to <code>/etc/fstab</code></p>
+<pre><code># SSD tweak: temporary directories as tmpfs
+tmpfs   /tmp       tmpfs   defaults,noatime,mode=1777   0 0
+tmpfs   /var/tmp   tmpfs   defaults,noatime,mode=1777   0 0
+tmpfs	/var/log	tmpfs	defaults,noatime,mode=0755	0	0
+tmpfs	/var/spool	tmpfs	defaults,noatime,mode=1777	0	0
+</code></pre>
+<blockquote>
+<p><strong>DISCLAIMER</strong>: Putting anything other than <code>/tmp</code> into memory, can produce unpredictable results in specific circumstances. It should be ok on desktop machines and helps to extend the life of your SSD by limiting writes. Do not enable on servers. Actually most of what is on this page may have an adverse effect on server performance.</p>
+</blockquote>
+<p>Activate by rebooting your system. Enjoy a faster, more responsive system.</p>
+<blockquote>
+<p><strong>[FEB 8/22 UPDATE]</strong>: Since publishing this article I have moved from Pop!_OS to Fedora. Fedora is a cutting edge distribution, which does not require all of these tune-ups to make a snappy OS out of the box.</p>
+</blockquote>
+<p>Let&rsquo;s elaborate.</p>
+<ol>
+<li>The kernel parameters mentioned above do <strong>not</strong> need to be updated on Fedora</li>
+<li>The sysctl.d modifications are <strong>not</strong> required on Fedora, but they are done simply because I have more than plenty memory anyway. Out of the box default settings on Fedora are better than those of Pop!_OS</li>
+<li>The disk optimizations in /etc/fstab are set by default</li>
+</ol>
+<h1 id="fedora-update">Fedora Update</h1>
+<p>Fedora uses a different package management system than Pop! OS, which is Ubuntu based. While Debian derivatives like Ubuntu and Pop!_OS use apt as their package manager, Fedora is RedHat based. RedHat uses rpm files which are managed by yum or dnf (depending on the version of the OS).</p>
+<p>By default, dnf is quite slow compared to apt but this is easily fixed by adding some parameters to the configuration file.</p>
+<pre><code>[main]
+gpgcheck=1
+installonly_limit=3
+clean_requirements_on_remove=True
+best=False
+skip_if_unavailable=True
+&amp;lt;strong&gt;max_parallel_downloads=10
+fastestmirror=True
+</code></pre>
+<p>The two bottom bold lines need to be added to /etc/dnf/dnf.conf. The first one increases the number of simultaneous download connections to 20, which increases download speed. The second one looks for the fastest mirror from your location, which ensures you will get the maximum possible download speed. Combined, these make dnf operate as fast or faster than apt on most systems.</p>
+<p>Due to the nature of a bleeding edge distribution like Fedora, it can sometimes be tricky to update. Especially the kernel and / or kernel drivers. To avoid such problems, I run updates with the <code>--exclude=kernel*</code> flag. In fact, I wrote a function for my Fishshell to get and install updates without kernel, like so:</p>
+<pre><code>function up2date
+  sudo dnf upgrade -y --refresh --exclude=kernel\*
+end
+</code></pre>
+<p>And saved it as <code>up2date.fish</code> under <code>$HOME/.config/fish/function</code>s</p>
+</div>
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a1313%2fblog%2foptimizing-linux-for-desktop-performance%2f&text=Optimizing%20Linux%20for%20desktop%20performance" target="_blank"
+                title="Post" class="share-button x">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblog%2foptimizing-linux-for-desktop-performance%2f&t=Optimizing%20Linux%20for%20desktop%20performance" target="_blank"
+                title="Facebook" class="share-button facebook">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                </div>
+            </a>
+            <a href="https://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2flocalhost%3a1313%2fblog%2foptimizing-linux-for-desktop-performance%2f&title=Optimizing%20Linux%20for%20desktop%20performance" target="_blank"
+                title="hatena" class="share-button hatena">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+                </div>
+            </a>
+            <a href="https://getpocket.com/edit?url=http%3a%2f%2flocalhost%3a1313%2fblog%2foptimizing-linux-for-desktop-performance%2f&title=Optimizing%20Linux%20for%20desktop%20performance" target="_blank" title="pocket"
+                class="share-button pocket">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
+                </div>
+            </a>
+            <a href="https://timeline.line.me/social-plugin/share?url=http%3a%2f%2flocalhost%3a1313%2fblog%2foptimizing-linux-for-desktop-performance%2f" class="share-button line">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>LINE
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="Optimizing Linux for desktop performance http://localhost:1313/blog/optimizing-linux-for-desktop-performance/" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>Copy
+                </div>
+            </a>
+        </div>
+        <hr class="py-4">
+        <aside id="meta">
+            <div class="grid grid-cols-2">
+                <div class="col-span-1">
+                    
+                    <a class="previous lg:text-2xl" href="http://localhost:1313/blog/moving-a-linux-install-to-a-new-disk/">
+                        <div
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                            <span class="icon-keyboard_arrow_left"></span> Moving a…
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <a class="next lg:text-2xl" href="http://localhost:1313/blog/upgraded-laptop-to-fedora-36/">
+                    <div
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
+                        Upgraded… <span class="icon-keyboard_arrow_right"></span>
+                    </div>
+                </a>
+                
+            </div>
+        </aside>
+    </div>
+</div>
+
+  </main><footer class="bg-tlgray-100">
+  
+  <script src='/js/clipboard.min.js'></script>
+  <script src='/js/highlight.min.js'></script>
+  <script src='/js/highlightjs-line-numbers.min.js'></script>
+  <script src='/js/sweetalert2.min.js'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Copied!',
+        text: 'Copied the URL and title.'
+      })
+    }
+  </script>
+  
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      sport-touring.eu
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/throttlemeister" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; sport-touring.eu 2024 All Rights Reserved.
+  </div>
+</footer>
+</body>
+
+</html>

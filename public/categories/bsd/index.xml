@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BSD on sport-touring.eu</title>
+    <link>http://localhost:1313/categories/bsd/</link>
+    <description>Recent content in BSD on sport-touring.eu</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Oct 2023 17:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/bsd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>No more Windows. FreeBSD instead.</title>
+      <link>http://localhost:1313/blog/2023-10-10-no-more-windows-freebsd-instead/</link>
+      <pubDate>Tue, 10 Oct 2023 17:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2023-10-10-no-more-windows-freebsd-instead/</guid>
+      <description>No, I did not stop running OpenSUSE Tumbleweed. That&amp;rsquo;s still my daily driver. I did however wipe my Windows drive and installed FreeBSD instead. I have used FreeBSD quite a lot way back when, and since I hadn&amp;rsquo;t actually booted into Windows for months, I just decided to install FreeBSD on that drive so I could play with it again after I saw KDE is actively supporting FreeBSD for the desktop.</description>
+    </item>
+  </channel>
+</rss>

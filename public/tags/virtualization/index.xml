@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualization on sport-touring.eu</title>
+    <link>http://localhost:1313/tags/virtualization/</link>
+    <description>Recent content in Virtualization on sport-touring.eu</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 13 Feb 2021 10:09:41 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>As short as possible: application containers, system containers, virtualization</title>
+      <link>http://localhost:1313/blog/application-containers-system-containers-virtualization/</link>
+      <pubDate>Sat, 13 Feb 2021 10:09:41 +0000</pubDate>
+      <guid>http://localhost:1313/blog/application-containers-system-containers-virtualization/</guid>
+      <description>Sometimes, there is a bit of confusion as to what the difference is between application containers (Docker, Podman, K8S, OpenShift), system containers (LXC/LXD) and virtualization (KVM, Vmware, Hyper-V, Xen) and when you should use them. I will try to explain the differences as short as possible.&#xA;Application containers Application containers are created with the most minimal environment to run a specific application. This includes the OS and all dependencies for that application.</description>
+    </item>
+    <item>
+      <title>Did you know... (or, RHEL on LXC/LXD)</title>
+      <link>http://localhost:1313/blog/rhel-on-lxc-lxd/</link>
+      <pubDate>Sat, 13 Feb 2021 09:40:20 +0000</pubDate>
+      <guid>http://localhost:1313/blog/rhel-on-lxc-lxd/</guid>
+      <description>There are no RedHat Enterprise Linux (RHEL) LXC/LXD container images publicly available? There are LXC/LXD container images available for CentOS and Fedora? You can convert a CentOS install to RHEL using the Convert2RHEL tool? This also works for a LXC/LXD container? You will need to do this if you want to run RHEL on Proxmox in a LXC container? You can create a tarbal of a running system to import into a vanilla LXC/LXD installation?</description>
+    </item>
+  </channel>
+</rss>
