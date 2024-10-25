@@ -70,7 +70,6 @@ googleAnalytics = "G-8FNQW4P0TD"
     url = "/about/"
     weight = 3
 
-
   # Footer Menu
   [[menu.footer]]
     name = "Home"
