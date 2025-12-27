@@ -162,10 +162,10 @@
 <h1 id="configuring-the-interface">Configuring the interface</h1>
 <p>Now we have to configure the interface Docker can use. We do this by adding a bridge on top of the existing physical interface you use on your network.</p>
 <ul>
-<li>ip link add macvlan-br0 link bond0 type macvlan mode bridge<!-- raw HTML omitted -->This adds a bridge device on top of the physical interface with the name macvlan-br0</li>
-<li>ip addr add 192.168.0.254/32 dev macvlan-br0<!-- raw HTML omitted -->This adds an IP address on the bridge device so the host has an IP address in the range will give to Docker</li>
-<li>ip link set macvlan-br0 up<!-- raw HTML omitted -->This will activate the virtual bridge device</li>
-<li>ip route add 192.168.0.192/26 dev macvlan-br0<!-- raw HTML omitted -->This will add a route to the Docker network so it can be reached</li>
+<li>ip link add macvlan-br0 link bond0 type macvlan mode bridge<br />This adds a bridge device on top of the physical interface with the name macvlan-br0</li>
+<li>ip addr add 192.168.0.254/32 dev macvlan-br0<br />This adds an IP address on the bridge device so the host has an IP address in the range will give to Docker</li>
+<li>ip link set macvlan-br0 up<br />This will activate the virtual bridge device</li>
+<li>ip route add 192.168.0.192/26 dev macvlan-br0<br />This will add a route to the Docker network so it can be reached</li>
 </ul>
 <p>You will have to put this in a script you can run at boot of your Synology device, as these settings will not retain over a reboot as we have to make them on the commandline and cannot make them in the Synology DSM.</p>
 <pre><code>#!/bin/bash

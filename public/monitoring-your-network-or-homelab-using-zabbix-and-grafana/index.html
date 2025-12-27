@@ -155,13 +155,13 @@ mysql&gt; quit;
 <p>And import the database schema</p>
 <pre><code># zcat /usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz | mysql -uzabbix -p zabbix
 </code></pre>
-<p>If your database is not residing on your Zabbix server, you can add -h <!-- raw HTML omitted --> to the above to make sure you are connecting to the remote database server. Also, when creating the user and you are using a remote database, make sure the Zabbix user is allowed to connect over the network to the database.</p>
+<p>If your database is not residing on your Zabbix server, you can add -h <server> to the above to make sure you are connecting to the remote database server. Also, when creating the user and you are using a remote database, make sure the Zabbix user is allowed to connect over the network to the database.</p>
 <p>d. Configure the Zabbix server to use the database you have created by filling out the relevant fields in /etc/zabbix/zabbix_server.conf</p>
 <p>e. Start your brand-new Zabbix server:</p>
 <pre><code># systemctl restart zabbix-server zabbix-agent apache2
 # systemctl enable zabbix-server zabbix-agent apache2
 </code></pre>
-<p>f. You are done. You can now login to your server on http://<!-- raw HTML omitted -->:3000 and log in with user Admin and password zabbix and configure everything else using the web frontend.</p>
+<p>f. You are done. You can now login to your server on http://<server>:3000 and log in with user Admin and password zabbix and configure everything else using the web frontend.</p>
 <h1 id="installing-grafana">Installing Grafana</h1>
 <p>Installing Grafana is equally simple.<br>
 a. Install the pre-requisites and add the repository key</p>

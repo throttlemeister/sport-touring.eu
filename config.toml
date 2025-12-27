@@ -82,3 +82,7 @@ googleAnalytics = "G-8FNQW4P0TD"
     url = "https://github.com/throttlemeister"
     pre = "<i class='icon-github text-2xl'></i>"
       weight = 2
+
+[markup]
+  [markup.goldmark]
+  renderer.unsafe = true
