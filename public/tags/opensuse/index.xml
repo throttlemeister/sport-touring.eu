@@ -6,21 +6,21 @@
     <description>Recent content in Opensuse on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Mar 2024 23:50:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 09:47:10 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/opensuse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenSUSE Tumbleweed, 6 months in</title>
       <link>http://localhost:1313/blog/opensuse-tumbleweed-6-months-in/</link>
       <pubDate>Sat, 02 Mar 2024 23:50:13 +0000</pubDate>
       <guid>http://localhost:1313/blog/opensuse-tumbleweed-6-months-in/</guid>
-      <description>Well, here we are, 6 months after installing OpenSUSE Tumbleweed and still no urge to change. The only change I am longing for is the update to KDE Plasma 6, which should be coming soon now that it has officially been released.&#xA;Since there are basically no updates since my last post in December, there isn&amp;rsquo;t much to say. I did however made some changes. A couple of weeks ago, my GTX1080 decided to shit itself such that it triggers the short protection in the power supply so that&amp;rsquo;s out.</description>
+      <description>&lt;p&gt;Well, here we are, 6 months after installing OpenSUSE Tumbleweed and still no urge to change. The only change I am longing for is the update to KDE Plasma 6, which should be coming soon now that it has officially been released.&lt;/p&gt;&#xA;&lt;p&gt;Since there are basically no updates since my last post in &lt;a href=&#34;http://localhost:1313/posts/opensuse/opensuse-4-months-in/&#34;&gt;December&lt;/a&gt;, there isn&amp;rsquo;t much to say. I did however made some changes. A couple of weeks ago, my GTX1080 decided to shit itself such that it triggers the short protection in the power supply so that&amp;rsquo;s out. Bit of a pain since everything is water cooled. I ended up replacing it with a Sapphire R9 390 Nitro which is an AMD based card. Raw speed is about half of that of the GTX1080, but at 50 euros it was cheap and being AMD means no more Nvidia issues on Linux as limited as they were for me. Main issue for me was that I had to manually recreate the initrd whenever a new driver version was released to make it work.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OpenSUSE: 4 months in</title>
       <link>http://localhost:1313/blog/opensuse-4-months-in/</link>
       <pubDate>Mon, 04 Dec 2023 18:54:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/opensuse-4-months-in/</guid>
-      <description>Maybe it is time for a little update, even if there is not much to say. After 4 months of running OpenSUSE Tumbleweed, I can honestly say I have not had a single moment where I&amp;rsquo;d thought I should maybe look for another distribution because XYZ is getting too annoying.&#xA;Of course it does have some annoyances. Some are with me, like running systemd-boot while it is not officially ready for primetime yet.</description>
+      <description>&lt;p&gt;Maybe it is time for a little update, even if there is not much to say. After 4 months of running OpenSUSE Tumbleweed, I can honestly say I have not had a single moment where I&amp;rsquo;d thought I should maybe look for another distribution because XYZ is getting too annoying.&lt;/p&gt;&#xA;&lt;p&gt;Of course it does have some annoyances. Some are with me, like running systemd-boot while it is not officially ready for primetime yet. Others are with OpenSUSE or my setup, like sometimes an update will bork the system and I have to do a snapper rollback. Fortunately, OpenSUSE makes this a 2 minute job and so far, rolling back the update and installing it again is all that is needed to fix the system and the update.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -6,14 +6,14 @@
     <description>Recent content in Kde on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 May 2024 21:34:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 09:47:10 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/kde/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>KDE Plasma 6: Don’t be fooled by the naysayers on the internet</title>
       <link>http://localhost:1313/blog/kde-plasma-6-dont-be-fooled-by-the-naysayers-on-the-internet/</link>
       <pubDate>Thu, 02 May 2024 21:34:58 +0000</pubDate>
       <guid>http://localhost:1313/blog/kde-plasma-6-dont-be-fooled-by-the-naysayers-on-the-internet/</guid>
-      <description>About a month ago, KDE released their much anticipated next major release of the KDE desktop environment, version 6. The only distributions using it soon after were (obviously) KDE Neon, the KDE showcase / development platform, and the rolling release distributions like Arch and OpenSUSE Tumbleweed. The scheduled release distributions will only ship KDE6 in their next new release.&#xA;As it was released, obviously there were some teething problems despite a long and extensive beta test cycle and lots of bigfixing.</description>
+      <description>&lt;p&gt;About a month ago, KDE released their much anticipated next major release of the KDE desktop environment, version 6. The only distributions using it soon after were (obviously) KDE Neon, the KDE showcase / development platform, and the rolling release distributions like Arch and OpenSUSE Tumbleweed. The scheduled release distributions will only ship KDE6 in their next new release.&lt;/p&gt;&#xA;&lt;p&gt;As it was released, obviously there were some teething problems despite a long and extensive beta test cycle and lots of bigfixing. Some of these were:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

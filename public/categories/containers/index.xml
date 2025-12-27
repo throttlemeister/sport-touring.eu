@@ -6,21 +6,21 @@
     <description>Recent content in Containers on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 May 2023 12:59:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 09:47:10 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/containers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running redundant AdGuard@Home DNS servers on Synology</title>
       <link>http://localhost:1313/blog/running-redundant-adguardhome-dns-servers-on-synology/</link>
       <pubDate>Wed, 03 May 2023 12:59:04 +0000</pubDate>
       <guid>http://localhost:1313/blog/running-redundant-adguardhome-dns-servers-on-synology/</guid>
-      <description>This is a quick post on how to run multiple instances of AdGuard@Home on a single Synology host using Docker.&#xA;Problem: you cannot easily, using Docker, run multiple instances of the same program - or different program - while listening on the same port.&#xA;Solution: do not use host or bridge networking, but put the container on the same network as the host using macvlan.&#xA;To achieve this, we need to do the following:</description>
+      <description>&lt;p&gt;This is a quick post on how to run multiple instances of AdGuard@Home on a single Synology host using Docker.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: you cannot easily, using Docker, run multiple instances of the same program - or different program - while listening on the same port.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: do not use host or bridge networking, but put the container on the same network as the host using macvlan.&lt;/p&gt;&#xA;&lt;p&gt;To achieve this, we need to do the following:&lt;/p&gt;</description>
     </item>
     <item>
       <title>As short as possible: application containers, system containers, virtualization</title>
       <link>http://localhost:1313/blog/application-containers-system-containers-virtualization/</link>
       <pubDate>Sat, 13 Feb 2021 10:09:41 +0000</pubDate>
       <guid>http://localhost:1313/blog/application-containers-system-containers-virtualization/</guid>
-      <description>Sometimes, there is a bit of confusion as to what the difference is between application containers (Docker, Podman, K8S, OpenShift), system containers (LXC/LXD) and virtualization (KVM, Vmware, Hyper-V, Xen) and when you should use them. I will try to explain the differences as short as possible.&#xA;Application containers Application containers are created with the most minimal environment to run a specific application. This includes the OS and all dependencies for that application.</description>
+      <description>&lt;p&gt;Sometimes, there is a bit of confusion as to what the difference is between application containers (Docker, Podman, K8S, OpenShift), system containers (LXC/LXD) and virtualization (KVM, Vmware, Hyper-V, Xen) and when you should use them. I will try to explain the differences as short as possible.&lt;/p&gt;&#xA;&lt;h1 id=&#34;application-containers&#34;&gt;Application containers&lt;/h1&gt;&#xA;&lt;p&gt;Application containers are created with the most minimal environment to run a specific application. This includes the OS and all dependencies for that application. Every tool or program normally present in the OS that is not needed to run the application is typically left out so that the container image is a small as possible and performs as fast as possible.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

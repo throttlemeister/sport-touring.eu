@@ -6,14 +6,14 @@
     <description>Recent content in Gentoo on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Jan 2021 15:55:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 09:47:10 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/gentoo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gentoo on Windows with WSL2</title>
       <link>http://localhost:1313/blog/gentoo-on-wsl/</link>
       <pubDate>Tue, 19 Jan 2021 15:55:01 +0000</pubDate>
       <guid>http://localhost:1313/blog/gentoo-on-wsl/</guid>
-      <description>Introduction WSL 2 on Windows 10 introduced the ability to run a native linux kernel on your computer while using Windows 10 as your main operating system. Instead of emulating a linux kernel, like WSL 1 does, WSL 2 uses a hypervisor to run linux in parallel with Windows.&#xA;To be able to run WSL 2 on Windows 10, installation of Windows 10 feature update 2004 or newer is required.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;WSL 2 on Windows 10 introduced the ability to run a native linux kernel on your computer while using Windows 10 as your main operating system. Instead of emulating a linux kernel, like WSL 1 does, WSL 2 uses a hypervisor to run linux in parallel with Windows.&lt;br&gt;&#xA;To be able to run WSL 2 on Windows 10, installation of Windows 10 feature update 2004 or newer is required.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

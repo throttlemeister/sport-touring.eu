@@ -6,14 +6,14 @@
     <description>Recent content in Lxd on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Feb 2021 09:40:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 09:47:10 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/lxd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Did you know... (or, RHEL on LXC/LXD)</title>
       <link>http://localhost:1313/blog/rhel-on-lxc-lxd/</link>
       <pubDate>Sat, 13 Feb 2021 09:40:20 +0000</pubDate>
       <guid>http://localhost:1313/blog/rhel-on-lxc-lxd/</guid>
-      <description>There are no RedHat Enterprise Linux (RHEL) LXC/LXD container images publicly available? There are LXC/LXD container images available for CentOS and Fedora? You can convert a CentOS install to RHEL using the Convert2RHEL tool? This also works for a LXC/LXD container? You will need to do this if you want to run RHEL on Proxmox in a LXC container? You can create a tarbal of a running system to import into a vanilla LXC/LXD installation?</description>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;There are no RedHat Enterprise Linux (RHEL) LXC/LXD container images publicly available?&lt;/li&gt;&#xA;&lt;li&gt;There are LXC/LXD container images available for CentOS and Fedora?&lt;/li&gt;&#xA;&lt;li&gt;You can convert a CentOS install to RHEL using the &lt;a href=&#34;https://access.redhat.com/articles/2360841&#34;&gt;Convert2RHEL&lt;/a&gt; tool?&lt;/li&gt;&#xA;&lt;li&gt;This also works for a LXC/LXD container?&lt;/li&gt;&#xA;&lt;li&gt;You will need to do this if you want to run RHEL on Proxmox in a LXC container?&lt;/li&gt;&#xA;&lt;li&gt;You can create a tarbal of a running system to import into a vanilla LXC/LXD installation?&lt;/li&gt;&#xA;&lt;li&gt;You will need to create a metafile.tar.gz with a few lines of information about the tarbal to do this?&lt;/li&gt;&#xA;&lt;li&gt;You can also use an export from a Docker container to get the system?&lt;/li&gt;&#xA;&lt;li&gt;And that you can also use an export from a WSL distribution for this?&lt;/li&gt;&#xA;&lt;li&gt;This means you can set up a WSL environment on your Windows box (see other posts here) just the way you want with all the tools you need, and you can export it to run it independently in a LXC/LXD container as a server?&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>
 </rss>

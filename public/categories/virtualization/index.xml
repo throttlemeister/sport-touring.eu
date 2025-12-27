@@ -6,14 +6,14 @@
     <description>Recent content in Virtualization on sport-touring.eu</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Feb 2021 10:09:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 09:47:10 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/virtualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>As short as possible: application containers, system containers, virtualization</title>
       <link>http://localhost:1313/blog/application-containers-system-containers-virtualization/</link>
       <pubDate>Sat, 13 Feb 2021 10:09:41 +0000</pubDate>
       <guid>http://localhost:1313/blog/application-containers-system-containers-virtualization/</guid>
-      <description>Sometimes, there is a bit of confusion as to what the difference is between application containers (Docker, Podman, K8S, OpenShift), system containers (LXC/LXD) and virtualization (KVM, Vmware, Hyper-V, Xen) and when you should use them. I will try to explain the differences as short as possible.&#xA;Application containers Application containers are created with the most minimal environment to run a specific application. This includes the OS and all dependencies for that application.</description>
+      <description>&lt;p&gt;Sometimes, there is a bit of confusion as to what the difference is between application containers (Docker, Podman, K8S, OpenShift), system containers (LXC/LXD) and virtualization (KVM, Vmware, Hyper-V, Xen) and when you should use them. I will try to explain the differences as short as possible.&lt;/p&gt;&#xA;&lt;h1 id=&#34;application-containers&#34;&gt;Application containers&lt;/h1&gt;&#xA;&lt;p&gt;Application containers are created with the most minimal environment to run a specific application. This includes the OS and all dependencies for that application. Every tool or program normally present in the OS that is not needed to run the application is typically left out so that the container image is a small as possible and performs as fast as possible.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
